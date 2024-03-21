@@ -138,7 +138,7 @@
         const apiKey = "4bba24193d634df4aa57ece73aa62d51";
 
         function showNewsOfTheDay() {
-            const apiUrl = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${apiKey}`;
+            const apiUrl = `http://localhost:3000/top-headlines`;
 
             fetch(apiUrl)
                 .then(response => {
@@ -176,7 +176,7 @@
                 console.log('Results loaded from cache');
             } else {
                 console.log('Results loaded from API');
-                const apiUrl = `https://newsapi.org/v2/everything?q=${searchQuery}&language=${language}&from=2024-03-10&sortBy=publishedAt&apiKey=${apiKey}`;
+                const apiUrl = `http://localhost:3000/news-day?query=${searchQuery}&language=${language}`;
 
                 fetch(apiUrl)
                     .then(response => {
@@ -369,7 +369,7 @@
         window.onload = function () {
             const initialSearchQuery = "world";
             const initialLanguage = "en";
-            const apiUrl = `https://newsapi.org/v2/everything?q=${initialSearchQuery}&language=${initialLanguage}&from=2024-03-10&sortBy=publishedAt&apiKey=${apiKey}`;
+            const apiUrl = `http://localhost:3000/world`;
 
             fetch(apiUrl)
                 .then(response => {

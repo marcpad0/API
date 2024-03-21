@@ -37,6 +37,26 @@ app.get('/world', async (req, res) => {
     }
 });
 
+app.get('/news-day', async (req, res) => {
+    try {
+        const { query, language } = req.query;
+        const fromDate = '2024-03-10'; 
+        console.log("query:", query);
+        console.log("language:", language);
+
+        const fetch = await import('node-fetch');
+
+        const apiUrl = `https://newsapi.org/v2/everything?q=${query}&language=${language}&from=${fromDate}&sortBy=publishedAt&apiKey=${apiKey}`;
+
+        const response = await fetch.default(apiUrl);
+        const data = await response.json();
+        res.json(data);
+    } catch (error) {
+        console.error("Error:", error);
+        res.status(500).json({ error: "Error" });
+    }
+});
+
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
 })
