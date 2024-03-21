@@ -96,7 +96,7 @@
             display: none !important;
         }
     </style>
-    <link rel="icon" href="3141439-200.png">
+    <link rel="icon" href="./img/icon.png">
 </head>
 
 <body>
@@ -210,7 +210,7 @@
                 newsCardDiv.className = "news-card";
 
                 const imgElement = document.createElement("img");
-                imgElement.src = article.urlToImage ? article.urlToImage : "./placeholder.jpg";
+                imgElement.src = article.urlToImage ? article.urlToImage : "./img/error.jpg";
                 imgElement.className = "card-img-top";
                 imgElement.alt = "News image";
 
@@ -321,7 +321,7 @@
                     newsCardDiv.className = "news-card";
 
                     const imgElement = document.createElement("img");
-                    imgElement.src = article.urlToImage ? article.urlToImage : "./placeholder.jpg";
+                    imgElement.src = article.urlToImage ? article.urlToImage : "./img/error.jpg";
                     imgElement.className = "card-img-top";
                     imgElement.alt = "News image";
 
